@@ -1,4 +1,5 @@
 body {
+
 }
 /* Se usa # para referenciar nomes de ids */
 #banner {
@@ -45,7 +46,7 @@ em strong {
 /* Diplay block ocupa toda a linha mesmo o tamanho do conteúdo sendo menor que o resto da página */
 /* Diplay inline deixa que tenha outros conteúdos do seu lado (mesma linha, mas não permite alterar o espaçamento interno ou externo) */
 /* Diplay inline-block ocupa só o tamanho definido no conteúdo e permite que tenha outros conteúdos do lado dele e que seja alterado o espaçamento entre eles */
-ul {
+.lista-beneficios {
   display: inline-block;
   vertical-align: top;
   width: 20%;
