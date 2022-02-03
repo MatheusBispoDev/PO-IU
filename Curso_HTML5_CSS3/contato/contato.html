@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contato - Barbearia Alura</title>
+
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="caixa">
+        <!-- alt = Caso a imagem não esteja sendo apresentada corretamente, o alt é exibido -->
+        <h1><img src="../images/logo.png" alt="Logo da Barbearia Alura" /></h1>
+
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../produtos/produtos.html">Produtos</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <form action="">
+        <label for="nomesobrenome"> Nome e Sobrenome:</label>
+        <input type="text" id="nomesobrenome" class="input-padrao" required />
+
+        <label for="email"> Email</label>
+        <input
+          type="email"
+          id="email"
+          class="input-padrao"
+          required
+          placeholder="seuemail@dominio.com"
+        />
+
+        <label for="telefone"> Telefone</label>
+        <input
+          type="tel"
+          id="telefone"
+          class="input-padrao"
+          required
+          placeholder="(11) 91234-5678"
+        />
+
+        <label for="mensagem">Mensagem</label>
+        <textarea cols="70" rows="10" id="mensagem" required></textarea>
+
+        <!-- fieldset = Agrupador de campos, não influência no visual, porém organiza melhor o código -->
+        <fieldset>
+          <!-- legend = Título do agrupador de códigos -->
+          <legend>Como prefere o nosso contato?</legend>
+          <label for="radio-email"
+            ><input
+              type="radio"
+              name="contato"
+              value="email"
+              id="radio-email"
+            />
+            Email</label
+          >
+
+          <label for="radio-telefone">
+            <input
+              type="radio"
+              name="contato"
+              value="telefone"
+              id="radio-telefone"
+            />
+            Telefone</label
+          >
+
+          <label for="radio-whatsapp"
+            ><input
+              type="radio"
+              name="contato"
+              value="whatsapp"
+              id="radio-whatsapp"
+              checked
+            />
+            WhatsApp</label
+          >
+        </fieldset>
+
+        <fieldset>
+          <legend>Qual horário prefere ser atendido?</legend>
+          <select>
+            <option>Manhã</option>
+            <option>Tarde</option>
+            <option>Noite</option>
+          </select>
+        </fieldset>
+
+        <label
+          ><input type="checkbox" class="checkbox" checked />Gostaria de receber
+          nossa novidade por email?</label
+        >
+
+        <input
+          type="submit"
+          id="enviar"
+          value="Enviar formulário"
+          class="enviar"
+        />
+      </form>
+
+      <table>
+        <!-- thead = Tag usado para o Cabeçalho de uma tabela -->
+        <thead>
+          <tr>
+            <!-- th = Tag usado para a coluna do cabeçalho de uma tabela -->
+            <th>Dia</th>
+            <th>Horário</th>
+          </tr>
+        </thead>
+         <!-- tbody = Tag usado para o Corpo de uma tabela -->
+        <tbody>
+          <tr>
+            <td>Segunda</td>
+            <td>8h - 20h</td>
+          </tr>
+          <tr>
+            <td>Quarta</td>
+            <td>8h - 20h</td>
+          </tr>
+          <tr>
+            <td>Sexta</td>
+            <td>8h - 20h</td>
+          </tr>
+        </tbody>
+         <!-- tfoot = Tag usado para o Rodapé de uma tabela -->
+      </table>
+    </main>
+
+    <footer>
+      <img src="../images/logo-branco.png" alt="Logo da Barbearia Alura" />
+      <p class="copyright">&copy; Copyright Barbearia Alura - 2019</p>
+    </footer>
+  </body>
+</html>

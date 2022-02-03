@@ -1,57 +1,159 @@
-body {
-}
-/* Se usa # para referenciar nomes de ids */
-#banner {
-  width: 100%;
+header {
+  background: #bbbbbb;
+  padding: 20px 0;
 }
 
-.principal {
-  background: #cccccc;
-  padding: 30px;
+.caixa {
+  position: relative;
+  width: 940px;
+  margin: 0 auto;
 }
 
-.titulo-principal {
-  padding-left: 20px;
+nav {
+  position: absolute;
+  top: 110px;
+  right: 0;
 }
 
-.titulo-centralizado {
-  text-align: center;
-  font-size: 32px;
+/* margin: top right bot left*/
+nav li {
+  display: inline;
+  margin: 0 0 0 15px;
 }
 
-p {
-  text-align: center;
+nav a {
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
 }
 
-#missao {
-  font-size: 20px;
+/* ADICIONANDO COMPORTAMENTOS DO USUÁRIO */
+/* :hober = quando o mouse estiver por cima do conteúdo */
+nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
-em strong {
-  color: rgb(255, green, blue);
+.produtos {
+  width: 940px;
+  margin: 0 auto;
+  padding: 50px 0;
 }
 
-/* Se usa . quando for para referenciar nomes de classes */
-.itens {
-  font-style: italic;
-  font-size: 24px;
-}
-
-.beneficios {
-  background: #ffffff;
-  padding: 20px;
-}
-
-/* Diplay block ocupa toda a linha mesmo o tamanho do conteúdo sendo menor que o resto da página */
-/* Diplay inline deixa que tenha outros conteúdos do seu lado (mesma linha, mas não permite alterar o espaçamento interno ou externo) */
-/* Diplay inline-block ocupa só o tamanho definido no conteúdo e permite que tenha outros conteúdos do lado dele e que seja alterado o espaçamento entre eles */
-.lista-beneficios {
+/* box-sizing: border-box define que o tamanho do conteúdo será sempre 30% e os espaçamentos serão de acordo com os 30% do tamanho */
+.produtos li {
   display: inline-block;
+  text-align: center;
+  width: 30%;
   vertical-align: top;
-  width: 20%;
-  margin-right: 20%;
+  margin: 0 1.5%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  border: 3px #000000 solid;
+  border-radius: 10px;
 }
 
-.imagembeneficios {
+.produtos li:hover {
+  border-color: #e41b1b;
+}
+
+.produtos li:active {
+  border-color: #088c19;
+}
+
+/* Forma de interpretar a linha: Quando o usuário estiver com o mouse em cima de alguma iten da lista, altere o conteúdo do h2 do produtos */
+.produtos li:hover h2 {
+  font-size: 34px;
+}
+
+.produtos h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.produto-descricao {
+  font-size: 18px;
+}
+
+.produto-preco {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0 0;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  background: url("images/bg.jpg");
+  padding: 40px 0;
+}
+
+.copyright {
+  color: #ffffff;
+  font-size: 13px;
+  margin: 20px 0 0;
+}
+
+main {
+  width: 940px;
+  margin: 0 auto;
+}
+
+form {
+  margin: 40px 0;
+}
+
+form label,
+form legend {
+  display: block;
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.input-padrao {
+  display: block;
+  margin: 0 0 20px;
+  padding: 10px 25px;
   width: 50%;
+}
+
+.checkbox {
+  margin: 20px 5px;
+}
+
+.enviar {
+  width: 40%;
+  padding: 15px 0;
+  background: orange;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  transition: 1s all; /* transition = Possibilida a transformação do visual de forma gradual (1 seg no caso) */
+  cursor: pointer;
+}
+
+.enviar:hover {
+  background: darkorange;
+  transform: scale(
+    1.1
+  ); /* transform = Possibilida a transformação de todo o elemento de forma proporcionalmente */
+}
+
+table {
+  margin: 20px 0 40px;
+}
+
+thead {
+  background: #555555;
+  color: white;
+  font-weight: bold;
+}
+
+th, td {
+  border: 1px solid #000000;
+  padding: 8px 15px;
 }
