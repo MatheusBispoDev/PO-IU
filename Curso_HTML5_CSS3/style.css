@@ -1,3 +1,7 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 header {
   background: #bbbbbb;
   padding: 20px 0;
@@ -36,54 +40,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.produtos {
-  width: 940px;
-  margin: 0 auto;
-  padding: 50px 0;
-}
-
-/* box-sizing: border-box define que o tamanho do conteúdo será sempre 30% e os espaçamentos serão de acordo com os 30% do tamanho */
-.produtos li {
-  display: inline-block;
-  text-align: center;
-  width: 30%;
-  vertical-align: top;
-  margin: 0 1.5%;
-  padding: 30px 20px;
-  box-sizing: border-box;
-  border: 3px #000000 solid;
-  border-radius: 10px;
-}
-
-.produtos li:hover {
-  border-color: #e41b1b;
-}
-
-.produtos li:active {
-  border-color: #088c19;
-}
-
-/* Forma de interpretar a linha: Quando o usuário estiver com o mouse em cima de alguma iten da lista, altere o conteúdo do h2 do produtos */
-.produtos li:hover h2 {
-  font-size: 34px;
-}
-
-.produtos h2 {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.produto-descricao {
-  font-size: 18px;
-}
-
-.produto-preco {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 10px 0 0;
-  margin-top: 10px;
-}
-
 footer {
   text-align: center;
   background: url("images/bg.jpg");
@@ -96,64 +52,20 @@ footer {
   margin: 20px 0 0;
 }
 
-main {
-  width: 940px;
-  margin: 0 auto;
-}
+@media screen and (max-width: 480px) {
+  .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+      width: auto;
+  }
 
-form {
-  margin: 40px 0;
-}
+  h1 {
+      text-align: center;
+  }
 
-form label,
-form legend {
-  display: block;
-  font-size: 20px;
-  margin: 0 0 10px;
-}
+  nav {
+      position: static;
+  }
 
-.input-padrao {
-  display: block;
-  margin: 0 0 20px;
-  padding: 10px 25px;
-  width: 50%;
-}
-
-.checkbox {
-  margin: 20px 5px;
-}
-
-.enviar {
-  width: 40%;
-  padding: 15px 0;
-  background: orange;
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  transition: 1s all; /* transition = Possibilida a transformação do visual de forma gradual (1 seg no caso) */
-  cursor: pointer;
-}
-
-.enviar:hover {
-  background: darkorange;
-  transform: scale(
-    1.1
-  ); /* transform = Possibilida a transformação de todo o elemento de forma proporcionalmente */
-}
-
-table {
-  margin: 20px 0 40px;
-}
-
-thead {
-  background: #555555;
-  color: white;
-  font-weight: bold;
-}
-
-th, td {
-  border: 1px solid #000000;
-  padding: 8px 15px;
+  .lista-beneficios, .imagem-beneficios {
+      width: 100%;
+  }
 }

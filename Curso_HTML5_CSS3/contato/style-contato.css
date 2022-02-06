@@ -1,0 +1,62 @@
+
+form {
+    margin: 40px 0;
+  }
+  
+  form label,
+  form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+  
+  .input-padrao {
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+  }
+  
+  .checkbox {
+    margin: 20px 5px;
+  }
+  
+  .enviar {
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all; /* transition = Possibilida a transformação do visual de forma gradual (1 seg no caso) */
+    cursor: pointer;
+  }
+  
+  .enviar:hover {
+    background: darkorange;
+    transform: scale(
+      1.1
+    ); /* transform = Possibilida a transformação de todo o elemento de forma proporcionalmente */
+  }
+  
+  table {
+    margin: 20px 0 40px;
+  }
+  
+  thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+  }
+  
+  th, td {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+  }
+
+  main {
+    width: 940px;
+    margin: 0 auto;
+  }
