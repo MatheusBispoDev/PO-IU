@@ -1,0 +1,14 @@
+#include 'tlpp-core.th'
+
+Namespace meu.namespace
+
+Main Function testeNamespace()
+    ConOut("testeNamespace")
+
+    /* A funcao testeNamespace2 podera ser chamada sem explicitar o namespace nem utilizar using porque estao no mesmo fonte*/
+    testeNamespace2()
+Return NIL
+
+Function testeNamespace2()
+    ConOut("testeNamespace2")
+Return Nil

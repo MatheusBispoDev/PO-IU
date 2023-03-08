@@ -1,0 +1,107 @@
+#include 'tlpp-core.th'
+
+Static cVar := "" As Character
+
+// Tipando Variáveis
+User Function TipandoVariaveis()
+    Local nVar := 0 As Numeric
+    Local aVar := {} As Array
+    Local jVar := JsonObject():New() As Json
+
+    Private oVar := tHashMap():New() As Object
+    Public dVar := Date() As Date
+
+    ConOut("cVar: " + ValType(cVar)) // C
+    ConOut("nVar: " + ValType(nVar)) // N
+    ConOut("aVar: " + ValType(aVar)) // A
+    ConOut("jVar: " + ValType(jVar)) // J
+    ConOut("oVar: " + ValType(oVar)) // O
+    ConOut("dVar: " + ValType(dVar)) // D
+
+Return Nil
+
+// Tipando Funções
+Function typedFunc() As Numeric
+    Local nVar := 10 As Numeric
+Return nVar
+
+Function typedTest() As Logical
+    Local cVar := "I Love TLPP" As Character
+    Local cResult As Character
+
+    /* ERRO DE COMPILACAO (typedFunc e Numerico e, portanto, nao pode ser somado a cVar, que e Character) */
+    /* Incompatible types between C and N */
+    cResult := cVar + cValToChar(typedFunc())
+
+Return .T.
+
+// Criando Classe
+Class ClasseTipada
+    Public Data nData As Numeric
+    Public Data cData As Character
+
+    Public Method New() As Object
+    Public Method GetNData() As Numeric
+    Public Method GetCData() As Character
+    Public Method GetDataTeste() As Character    
+EndClass
+
+// Criando Metodos
+Method New() class ClasseTipada As Object
+    ::nData := 10
+    ::cData := "Teste"
+Return Self
+
+Method GetNData() class ClasseTipada As Numeric
+Return ::nData
+
+Method GetCData() class ClasseTipada As Character
+Return ::cData
+
+Method GetDataTeste() class ClasseTipada As Character
+    Local nData As Numeric
+
+    // Error: Incompatible types between N and C
+    // nData ::GetCData()
+Return cValToChar(nData)
+
+User Function TestaClasseTipada()
+    Local oClasse As Object
+    Local nValue As Numeric
+    Local cValue As Character
+
+    oClasse := ClasseTipada():New()
+    nValue  := oClasse:GetNData()
+    cValue  := oClasse:GetCData()
+Return Nil
+
+// Tipando Parametros
+Static Function TipandoParametros(cPar1 As Character, dPar2 As Date) As Character
+    Local cRet As Character
+
+    cRet := cPar1 + ": " + DToC(dPar2)
+Return cRet
+
+User Function TesteTypePar()
+    Local cRet As Character
+    Local cNome := "Gabriel Alencar" As Character
+    Local dNascimento := SToD("19970228") As Date
+
+    cRet := TipandoParametros(cNome, dNascimento /*, dNascimento*/)
+
+    ConOut(cRet)
+Return Nil
+
+Static Function fVariadic(cPai As Character, hParams As Variadic)
+    Local nI As Numeric
+
+    ConOut("Pai: " + cPai)
+
+    For nI := 1 To hParams:vCount
+        ConOut("Filho: " + cValToChar(nI) + ": " + hParams:vArgs[nI])
+    Next
+Return Nil
+
+User Function TesteVariadic()
+    fVariadic("Gabriel", "FilhoA", "FilhoB", "FilhoC", "FilhoD")
+Return Nil

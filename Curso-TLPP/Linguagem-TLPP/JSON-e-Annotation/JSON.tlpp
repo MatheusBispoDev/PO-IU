@@ -1,0 +1,27 @@
+#include "tlpp-core.th"
+
+User Function ExemploJson()
+    Local jJson1 As Json
+    Local jJson2 As Json
+    Local aArray1 As Array
+
+    aArray1 := {}
+
+    jJson2 := {"Atributo1" : "Valor 1", "Atributo2" : .F., "Atributo3" : {"Valor 1", "Valor 2"}}
+    aAdd(aArray1, jJson2)
+
+    jJson1 := JsonObject():New()
+    jJson1["items"] := aArray1
+
+    ConOut(jJson1:toJson())
+Return Nil
+
+User Function JsonNativo()
+    Local jJson1 As Json
+
+    jJson1 := {"Atributo1" : "Valor 1", "Atributo2" : .F.}    
+    jJson1["Atributo2"] := .T.
+
+    ConOut(jJson1:toJson())
+    ConOut(ValType(jJson1))
+Return Nil

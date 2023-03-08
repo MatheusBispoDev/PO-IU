@@ -1,0 +1,64 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "totvs_language_debug",
+			"request": "launch",
+			"name": "Depuração do idioma TOTVS",
+			"program": "${command:AskForProgramName}",
+			"cwb": "${workspaceFolder}",
+			"smartclientBin": "C:/TOTVS/Protheus12_2210_TLPP/Protheus/bin/smartclient/smartclient.exe",
+			"isMultiSession": true,
+			"enableTableSync": true
+		}
+	],
+	"lastPrograms": [
+		{
+			"args": [],
+			"label": "U_TipandoVariaveis"
+		},
+		{
+			"args": [],
+			"label": "typedFunc"
+		},
+		{
+			"args": [],
+			"label": "U_TesteVariadic"
+		},
+		{
+			"args": [],
+			"label": "testeNamespace"
+		},
+		{
+			"args": [],
+			"label": "meu.namespace.testeNamespace"
+		},
+		{
+			"args": [],
+			"label": "U_CallNamespace"
+		},
+		{
+			"args": [],
+			"label": "ChamaNamespace"
+		},
+		{
+			"label": "TEncapsulamento"
+		},
+		{
+			"args": [],
+			"label": "U_TesteEscopo"
+		},
+		{
+			"args": [],
+			"label": "U_ExemploJson"
+		},
+		{
+			"args": [],
+			"label": "U_JsonNativo"
+		},
+		{
+			"label": "U_TesteAnnotation"
+		}
+	],
+	"lastProgramExecuted": "U_TesteAnnotation"
+}

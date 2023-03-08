@@ -1,0 +1,39 @@
+#include "tlpp-core.th"
+
+@annotation ExemploDeAnnotation
+    property1 As Char
+    property2 as Numeric Default 1
+@end
+
+@ExemploDeAnnotation(property1 = "Val1", property2 = 1)
+Main Function FuncAnn1()
+    ConOut("> Chamou FuncAnn1")
+Return
+
+@ExemploDeAnnotation(property1 = "Val2", property2 = 2)
+Main Function FuncAnn2()
+    ConOut("> Chamou FuncAnn2")
+Return
+
+User Function TesteAnnotation()
+    Local aFunctions As Array
+    Local nI As Numeric
+    Local cFuncao As Character
+
+    aFunctions := Reflection.GETPROGRAMFUNCTIONSBYANNOTATION("annotation.tlpp", "ExemploDeAnnotation")
+
+    For nI := 1 To Len(aFunctions)
+        If (Reflection.ISANNOTATIONFUNCTIONPRESENT("annotation.tlpp", aFunctions[nI], "ExemploDeAnnotation"))
+            jRet := Reflection.GETFUNCTIONANNOTATION("annotation.tlpp", aFunctions[nI], "ExemploDeAnnotation")
+
+            ConOut("Funcao: " + aFunctions[nI])
+            ConOut(" |- property1: " + cValToChar(jRet["property1"]))
+            ConOut(" |- property2: " + cValToChar(jRet["property2"]))
+
+            cFuncao := aFunctions[nI]
+            &cFuncao.()
+
+            ConOut("")
+        EndIf
+    Next
+Return Nil

@@ -1,0 +1,54 @@
+#include "tlpp-core.th"
+
+Class TEncapsulamento
+    Private Data cData As Character
+    Private Data nData As Numeric
+    Public Data dData As Date
+
+    Public Method New() As Object
+    Public Method GetCData() As Character
+    Public Method GetNData() As Numeric
+    Private Method GetDData() As Date 
+EndClass
+
+Method New() Class TEncapsulamento As Object
+    ::cData := "Texto"
+Return Self
+
+Method GetCData() Class TEncapsulamento As Character
+Return ::cData
+
+Method GetNData() Class TEncapsulamento As Numeric
+Return Self:nData
+
+Method GetDData() Class TEncapsulamento As Date
+Return ::dData
+
+User Function TesteEscopo() 
+    Local oClass As Object
+
+    oClass := TEncapsulamento():New()
+
+    //ConOut(oClass:cData) //Erro em execução pois a variavel e privada
+    //ConOut(oClass:nData) //Erro em execução pois a variavel e privada
+    ConOut(oClass:dData)
+
+    ConOut(oClass:GetCData())
+    ConOut(oClass:GetNData())
+    //ConOut(oClass:GetDData()) //Erro em execução pois o metodo e privada
+Return Nil
+
+Class TClassStatic
+    Data cData As Character
+
+    Static Method MetodoStatico()
+EndClass
+
+Method MetodoStatico() class TClassStatic
+    ConOut("Chamou static")
+    //ConOut(::cData) //Erro de compilacao pois classes estaticas nao possuem a instancia do objeto, portanto as variaveis nao podem ser manipuladas pelo Self
+Return Nil
+
+User Function TesteStatico()
+    TClassStatic():MetodoStatico()
+Return Nil

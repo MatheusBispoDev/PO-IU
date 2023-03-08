@@ -1,0 +1,89 @@
+<po-page-edit
+    [p-title]="title"
+    [p-breadcrumb]="breadcrumb"
+    (p-cancel)="cancel()"
+    (p-save)="save(false)"
+    (p-save-new)="saveOrDelete()"
+    [p-disable-submit]="isDisabledButton"
+    [p-literals]="customLiterals">
+
+    <po-loading-overlay [hidden]="!isLoading">
+    </po-loading-overlay>
+
+    <form [formGroup]="ownersForm" *ngIf="ownersForm">      
+
+        <po-container class="po-row po-xl-12 po-lg-12 po-md-12 po-sm-12">
+            <po-divider 
+                p-label="Informações Pessoais" 
+                p-border-width="medium">
+            </po-divider>
+
+            <div class="po-row">
+                <po-input class="po-xl-2 po-lg-2 po-md-2 po-sm-2"
+                    p-label="Id"
+                    formControlName="id"
+                    p-disabled="true">
+                </po-input>
+
+                <po-input class="po-xl-4 po-lg-4 po-md-4 po-sm-4"
+                    p-label="Nome"
+                    formControlName="name"
+                    p-required="true"
+                    p-clean="true"
+                    p-placeholder="Informar o nome do tutor">
+                </po-input>
+
+                <po-input class="po-xl-3 po-lg-3 po-md-3 po-sm-3"
+                    p-label="RG"
+                    formControlName="rg"
+                    p-required="true"
+                    p-clean="true"
+                    p-mask="99.999.999-9"
+                    p-placeholder="Informar o RG do tutor">
+                </po-input>
+
+                <po-input class="po-xl-3 po-lg-3 po-md-3 po-sm-3"
+                    p-label="CPF"
+                    formControlName="cpf"
+                    p-required="true"
+                    p-clean="true"
+                    p-mask="999.999.999-99"
+                    p-placeholder="Informar o CPF do tutor">
+                </po-input>
+            </div>
+
+            <po-divider
+                p-label="Informações para contato"
+                p-border-width="medium">
+            </po-divider>
+
+            <div class="po-row">
+                <po-input class="po-xl-6 po-lg-6 po-md-6 po-sm-6"
+                    p-label="E-mail"
+                    formControlName="email"
+                    p-required="true"
+                    p-clean="true"
+                    p-placeholder="Informar o E-mail do tutor">
+                </po-input>
+
+                <po-input class="po-xl-3 po-lg-3 po-md-3 po-sm-3"
+                    p-label="Telefone 1"
+                    formControlName="tel1"
+                    p-required="true"
+                    p-clean="true"
+                    p-mask="(99) 99999-9999"
+                    p-placeholder="Informar o 1º Telefone do tutor">
+                </po-input>
+
+                <po-input class="po-xl-3 po-lg-3 po-md-3 po-sm-3"
+                    p-label="Telefone 2"
+                    formControlName="tel2"
+                    p-required="true"
+                    p-clean="true"
+                    p-mask="(99) 99999-9999"
+                    p-placeholder="Informar o 2º Telefone do tutor">
+                </po-input>
+            </div>
+        </po-container>        
+    </form>
+</po-page-edit>
